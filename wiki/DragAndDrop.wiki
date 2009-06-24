@@ -1,9 +1,9 @@
-#summary add Drag & Drop functionality for [RemoteTag Remote] and [EffectDivTag Effect Div].
+#summary add Drag & Drop functionality for Remote and Effect Div.
 #labels Phase-Implementation
 
 = Introduction =
 
-The Attributes draggable="true" or drappable="true" extends the [RemoteTag Remote] and [EffectDivTag Effect Div].
+The Attributes draggable="true" or drappable="true" extends the [RemoteDivTag Remote] and [EffectDivTag Effect Div].
 
 Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.action Showcase] to see what this tag provides.
 
