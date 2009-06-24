@@ -1,0 +1,21 @@
+#summary The Progressbar widget renders a HTML progressbar.
+#labels Phase-Implementation
+
+= Introduction =
+
+Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.action Showcase] to see what this tag provides.
+
+
+= Samples =
+
+==Simple Progressbar==
+{{{
+<sj:progressbar id="progressbar" value="33"/>
+}}}
+
+==Resizeable Progressbar. ==
+{{{
+<sj:effectDiv id="progressbarWrapper" resizable="true" cssStyle="height:30px;" cssClass="ui-widget-default">
+  <sj:progressbar id="progressbarresize" value="21" change="change" cssStyle="height: 100%;"/>
+</sj:effectDiv>
+}}}
