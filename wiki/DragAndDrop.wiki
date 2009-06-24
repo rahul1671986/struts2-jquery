@@ -1,0 +1,36 @@
+#summary add Drag & Drop functionality for [RemoteTag Remote] and [EffectDivTag Effect Div].
+#labels Phase-Implementation
+
+= Introduction =
+
+The Attributes draggable="true" or drappable="true" extends the [RemoteTag Remote] and [EffectDivTag Effect Div].
+
+Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.action Showcase] to see what this tag provides.
+
+= Samples =
+
+==Drag & Drop==
+Drag & Drop with a mix of Remote and Effect Div
+{{{
+	    <script type="text/javascript">
+	     function onDrop(event, draggable, droppable){
+	         droppable.addClass('ui-state-highlight').find('p').html('Dropped!');
+	         draggable.find('p').html('I was dragged!');
+	     }
+	    </script>        
+        <sj:effectDiv id="draggablenonvalid" draggable="true" cssClass="noaccept ui-widget-content ui-corner-all" cssStyle="width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0;">
+            I'm draggable but can't be dropped
+        </sj:effectDiv>
+        
+        <sj:effectDiv id="draggable"  draggable="true" draggableHandle="h3" draggableRevert="invalid" cssClass="accept ui-widget-content ui-corner-all" cssStyle="width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0;">
+            <h3>Drag me to my target</h3>
+            <p></p>
+        </sj:effectDiv>
+        
+        <s:url id="urlecho" action="echo"><s:param name="echo">I'm a remote div, drag me!</s:param></s:url>
+        <sj:div href="%{urlecho}" id="draggableremote"  draggable="true" cssClass="accept ui-widget-content ui-corner-all" />
+        
+        <sj:effectDiv droppableDrop="onDrop" droppableActiveClass="ui-state-hover" droppableHoverClass="ui-state-active" droppable="true" droppableAccept=".accept" cssClass="ui-widget-content ui-corner-all">
+            <p>Drop here</p>
+        </sj:effectDiv>
+}}}
