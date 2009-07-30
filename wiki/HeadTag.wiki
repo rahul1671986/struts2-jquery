@@ -62,7 +62,7 @@ Built in themes from Plugin
 ==Custume Themes==
 Create and Download your own Theme with [http://jqueryui.com/themeroller/ jQuery ThemeRoller]
 
-Create a folder in your WebRoot path template/themes/mytheme and copy following files from the downloaded theme into it. 
+Create a folder in your WebRoot path *template/themes/mytheme* and copy following files from the downloaded theme into it. 
 
   # The jquery-ui-1.7.1.custom.css from the css folder and rename it to ui.theme.css
   # The Image Folder from the css folder 
