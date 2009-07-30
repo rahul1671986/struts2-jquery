@@ -1,0 +1,80 @@
+#summary The "head" tag renders required JavaScript code and necessary css styles.
+#labels Phase-Implementation
+
+= Introduction =
+
+The "head" tag renders required JavaScript code to configure jQuery and is required in order to use any of the tags included in the jQuery plugin. 
+
+= Samples =
+
+==Head tag for base AJAX calls==
+{{{
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<html>
+  <head>
+    <sj:head/>
+  </head>
+  <body>
+  </body>
+</html>
+}}}
+
+==Head tag for AJAX calls, Effects and Widgets==
+The "locale" attribute configures jQuery locale for datepicker. Default is "en" you can use all locales that are bundled with jQuery. e.g. "de, "fr", "ja", ...
+{{{
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<html>
+  <head>
+    <sj:head locale="de" jqueryui="true"/>
+  </head>
+  <body>
+  </body>
+</html>
+}}}
+
+=Themes=
+
+==Base Themes==
+Built in themes from Plugin 
+
+  * cupertino
+  * darkness
+  * lightness
+  * redmond
+  * smothness
+ 
+{{{
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<html>
+  <head>
+    <sj:head locale="de" jqueryui="true" jquerytheme="redmond"/>
+  </head>
+  <body>
+  </body>
+</html>
+}}}
+
+==Custume Themes==
+Create and Download your own Theme with [http://jqueryui.com/themeroller/ jQuery ThemeRoller]
+
+Create a folder in your WebRoot path template/themes/mytheme and copy following files from the downloaded theme into it. 
+
+  # The jquery-ui-1.7.1.custom.css from the css folder and rename it to ui.theme.css
+  # The Image Folder from the css folder 
+   
+{{{
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<html>
+  <head>
+    <sj:head locale="de" jqueryui="true" jquerytheme="mytheme" customBasepath="template/themes"/>
+  </head>
+  <body>
+  </body>
+</html>
+}}}
