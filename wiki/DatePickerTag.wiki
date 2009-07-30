@@ -3,7 +3,7 @@
 
 = Introduction =
 
-For costume locals use the Head Tag
+For custom locals use the [HeadTag Head Tag]
 
 = Samples =
 
