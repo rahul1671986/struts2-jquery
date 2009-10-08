@@ -48,7 +48,7 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
     <div id="div2">Div 2</div>
     <s:url id="ajaxTest" value="/AjaxTest.action"/>
 
-    <sj:a id="link1" href="%{ajaxTest}" targets="div1, div2"  effect="highlight" effectOptions="{ color : '#222222' }" effectDuration="3000">
+    <sj:a id="link1" href="%{ajaxTest}" targets="div1, div2"  *effect="highlight" effectOptions="{ color : '#222222' }" effectDuration="3000"*>
       Update Content
     </sj:a>
   </body>
