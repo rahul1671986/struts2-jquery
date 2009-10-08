@@ -48,7 +48,7 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
     <div id="div2">Div 2</div>
     <s:url id="ajaxTest" value="/AjaxTest.action"/>
 
-    <sj:a id="link1" href="%{ajaxTest}" targets="div1, div2"  effect="highlight" effectOptions="color : '#222222'" effectDuration="2200">
+    <sj:a id="link1" href="%{ajaxTest}" targets="div1, div2"  effect="highlight" effectOptions="{ color : '#222222' }" effectDuration="3000">
       Update Content
     </sj:a>
   </body>
@@ -113,14 +113,14 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
 
 = Attributes =
 		<table width="100%">
-			<tr>
-				<th align="left" valign="top"><h4>Name</h4></th>
-				<th align="left" valign="top"><h4>Required</h4></th>
-				<th align="left" valign="top"><h4>Default</h4></th>
-				<th align="left" valign="top"><h4>Evaluated</h4></th>
-				<th align="left" valign="top"><h4>Type</h4></th>
-				<th align="left" valign="top"><h4>Description</h4></th>
-			</tr>
+				<tr>
+					<th align="left" valign="top"><h4>Name</h4></th>
+					<th align="left" valign="top"><h4>Required</h4></th>
+					<th align="left" valign="top"><h4>Default</h4></th>
+					<th align="left" valign="top"><h4>Evaluated</h4></th>
+					<th align="left" valign="top"><h4>Type</h4></th>
+					<th align="left" valign="top"><h4>Description</h4></th>
+				</tr>
 				<tr>
 					<td align="left" valign="top">accesskey</td>
 					<td align="left" valign="top">false</td>
@@ -207,7 +207,7 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
 					<td align="left" valign="top"></td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
-					<td align="left" valign="top">A comma delimited list of form elements that should be individually serialized and sent with the input load request. Input element must have a 'name' attribute and will be serialized as <name>=<value></td>
+					<td align="left" valign="top">A comma delimited list of form elements that should be individually serialized and sent with the input load request. Input element must have a 'name' attribute and will be serialized as name=value</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">errorElementId</td>
