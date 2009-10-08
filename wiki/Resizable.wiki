@@ -1,15 +1,15 @@
-#summary add resizeable functionality for Remote and Effect Div.
+#summary add resizeable functionality for Divs.
 #labels Phase-Implementation
 
 = Introduction =
 
-The Attributes resizeable ="true" extends the [DivTag Remote] and [EffectDivTag Effect Div].
+The Attributes resizeable ="true" extends the [DivTag Divs], [TextareaTag Textareas], [TextfieldTag Textfields] and [SelectTag Select Boxes] to be resizeable.
 
 Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.action Showcase] to see what this tag provides.
 
 = Samples =
 
-==A resizeable Remote Div==
+== Sample 1 ==
 A Remote Div that load AJAX content and is resizeable. 
 {{{
     <s:url id="ajax" value="/ajax3.action"/>
@@ -18,11 +18,11 @@ A Remote Div that load AJAX content and is resizeable.
     </sj:div>
 }}}
 
-==A resizeable Effect Div==
+== Sample 2 ==
 {{{
-    <sj:effectDiv resizable="true" resizableAnimate="true" resizableGhost="true" resizableHandles="all" cssClass="ui-widget-content ui-corner-all" cssStyle="width: 250px; height: 180px; padding: 0.5em;">
+    <sj:div resizable="true" resizableAnimate="true" resizableGhost="true" resizableHandles="all" cssClass="ui-widget-content ui-corner-all" cssStyle="width: 250px; height: 180px; padding: 0.5em;">
         Resize me!<br/>
         Resize me!<br/>
         Resize me!<br/>
-    </sj:effectDiv>
+    </sj:div >
 }}}
