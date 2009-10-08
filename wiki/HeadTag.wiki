@@ -78,3 +78,71 @@ Create a folder in your WebRoot path *template/themes/mytheme* and copy followin
   </body>
 </html>
 }}}
+
+= Attributes =
+		<table width="100%">
+			<tr>
+				<th align="left" valign="top"><h4>Name</h4></th>
+				<th align="left" valign="top"><h4>Required</h4></th>
+				<th align="left" valign="top"><h4>Default</h4></th>
+				<th align="left" valign="top"><h4>Evaluated</h4></th>
+				<th align="left" valign="top"><h4>Type</h4></th>
+				<th align="left" valign="top"><h4>Description</h4></th>
+			</tr>
+				<tr>
+					<td align="left" valign="top">ajaxcache</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">true</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">Boolean</td>
+					<td align="left" valign="top">If set to false it will force the pages that you request to not be cached by the browser.</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">compressed</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">true</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">Boolean</td>
+					<td align="left" valign="top">use compressed version of jquery.js</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">customBasepath</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">base path for custom jQuery designs</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">jquerytheme</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">base</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">jQuery UI theme</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">jqueryui</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">Boolean</td>
+					<td align="left" valign="top">enable jQuery UI Scripts</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">loadFromGoogle</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">Boolean</td>
+					<td align="left" valign="top">Load JavaScript from google content distribution network</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">locale</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">en</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">import jQuery i18n scripts</td>
+				</tr>
+		</table>
