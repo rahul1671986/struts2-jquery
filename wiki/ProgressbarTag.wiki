@@ -8,16 +8,34 @@ Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.actio
 
 = Samples =
 
-==Simple Progressbar==
+== Simple Progressbar ==
 {{{
 <sj:progressbar id="progressbar" value="33"/>
 }}}
 
-==Resizeable Progressbar. ==
+== Resizeable Progressbar ==
 {{{
 <sj:effectDiv id="progressbarWrapper" resizable="true" cssStyle="height:30px;" cssClass="ui-widget-default">
   <sj:progressbar id="progressbarresize" value="21" change="change" cssStyle="height: 100%;"/>
 </sj:effectDiv>
+}}}
+
+== Progressbar with change event ==
+*JavaScript:*
+{{{
+    $.subscribe('mychangetopic', function(event,data) {
+        alert('value changed to : '+$("#progressbarchange").progressbar('option', 'value'));
+    });
+    $.subscribe('myclicktopic', function(event,data) {
+         $("#progressbarchange").progressbar( 'value' , parseInt( Math.random() * ( 90 ) ) );
+    });
+}}}
+
+*JSP Code:*
+{{{
+    <sj:progressbar id="progressbarchange" value="21" onChangeTopics="mychangetopic"/>
+    <br />
+    <sj:a href="#" onClickTopics="myclicktopic" cssClass="buttonlink ui-state-default ui-corner-all"><span class="ui-icon ui-icon-refresh"></span>change value</sj:a>
 }}}
 
 = Attributes =
