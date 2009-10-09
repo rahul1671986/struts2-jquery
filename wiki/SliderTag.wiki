@@ -1,0 +1,53 @@
+#summary The Slider widget renders a HTML slider.
+#labels Phase-Implementation
+
+= Introduction =
+
+Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.action Showcase] to see what this tag provides.
+
+
+= Samples =
+
+==Simple Slider==
+{{{
+<sj:slider id="simpleslider"/>
+
+}}}
+
+==Slider in a Form==
+{{{
+	<div id="result">Submit form bellow.</div>
+    
+    <s:form id="form" action="echo" theme="simple" cssClass="yform">
+        <fieldset>
+            <legend>AJAX Form</legend>
+	        <div class="type-text">
+	            <label for="echo">Echo: <span id="displayvaluespan">40</span></label>
+	            <sj:slider id="echo" name="echo" value="40" displayValueElement="displayvaluespan" min="20" max="200" animate="true" step="5" cssStyle="margin: 10px;"/>
+	        </div>
+	        <div class="type-button">
+	            <sj:submit targets="result" value="AJAX Submit" indicator="indicator_slider_form"/> <img id="indicator_slider_form" src="images/indicator.gif" alt="Loading..." style="display:none"/> 
+	        </div>
+        </fieldset>
+    </s:form>
+}}}
+
+==Sliders with min and max Range and Events==
+{{{
+    <script type="text/javascript">
+    $.subscribe('sliderStop', function(event,data) {
+        alert('Slider stop with value : '+event.originalEvent.ui.value);
+    });
+    </script>     
+    
+	<div id="result">Submit form bellow.</div>
+    
+    <s:form id="form1" action="echo" theme="xhtml" cssStyle="width: 400px; margin: 10px;">
+         <sj:slider id="echo1" name="echo" label="Echo" value="70" onCompleteTopics="sliderStop" range="min" min="20" max="200" step="5" cssStyle="width: 300px; margin: 10px;"/>
+         <sj:submit id="slidersubmit1" targets="result" value="AJAX Submit" indicator="indicator_slider_range"/> <img id="indicator_slider_range" src="images/indicator.gif" alt="Loading..." style="display:none"/> 
+    </s:form>
+    <s:form id="form2" action="echo" theme="xhtml" cssStyle="width: 400px; margin: 10px;">
+         <sj:slider id="echo2" name="echo" label="Echo" value="120" orientation="vertical" onCompleteTopics="sliderStop" range="max" min="20" max="200" step="5" cssStyle="height: 200px; margin: 10px;"/>
+         <sj:submit id="slidersubmit2" targets="result" value="AJAX Submit" indicator="indicator_slider_range"/> <img id="indicator_slider_range" src="images/indicator.gif" alt="Loading..." style="display:none"/> 
+    </s:form>
+}}}
