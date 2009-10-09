@@ -119,8 +119,8 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
         </fieldset>
     </s:form>
   </body>
-</html>}}}
-
+</html>
+}}}
 
 = Attributes =
 		<table width="100%">
