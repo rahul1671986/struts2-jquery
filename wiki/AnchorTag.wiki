@@ -27,6 +27,9 @@ A tag that creates an HTML element, that when clicked makes an asynchronous requ
 }}}
 
 ==AJAX call to multiple result divs with Highlight Effects==
+
+For effects, set *jqueryui="true"* in the sj:head tag.
+
 Supported Effects are 
   * bounce - Bounces the element vertically or horizontally n-times. 
   * highlight - Highlights the background with a defined color. 
