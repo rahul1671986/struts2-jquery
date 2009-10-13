@@ -1,9 +1,9 @@
-#summary generates an HTML <div/> that loads its content using an XMLHttpRequest call.
+#summary generates an HTML <div/> that loads its content using ajax call.
 #labels Phase-Implementation
 
 = Introduction =
 
-This tag generates an HTML div that loads its content using an XMLHttpRequest call, via the jQuery framework.
+This tag generates an HTML div that loads its content using an ajax call, via the jQuery framework.
 
 = Samples =
 
@@ -24,6 +24,9 @@ This tag generates an HTML div that loads its content using an XMLHttpRequest ca
 }}}
 
 ==Load content into div with indicator and Effects==
+
+For effects, set jqueryui="true" in the sj:head tag.
+
 Supported Effects are 
   * bounce - Bounces the element vertically or horizontally n-times. 
   * highlight - Highlights the background with a defined color. 
@@ -38,7 +41,7 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <html>
   <head>
-    <sj:head/>
+    <sj:head jqueryui="true"/>
   </head>
   <body>
     <s:url id="ajaxTest" value="/AjaxTest.action"/>
@@ -1491,4 +1494,3 @@ For *effectOptions* please look at the [http://docs.jquery.com/UI/Effects jQuery
 					<td align="left" valign="top">Preset the value of input element.</td>
 				</tr>
 		</table>
-
