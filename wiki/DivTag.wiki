@@ -25,7 +25,7 @@ This tag generates an HTML div that loads its content using an ajax call, via th
 
 ==Load content into div with indicator and Effects==
 
-For effects, set jqueryui="true" in the sj:head tag.
+For effects, set *jqueryui="true"* in the sj:head tag.
 
 Supported Effects are 
   * bounce - Bounces the element vertically or horizontally n-times. 
