@@ -1,6 +1,13 @@
 #summary Changelog
 #labels Featured
 
+= 1.6.0 =
+
+  * A History technique for Tabs based on jQuery BBQ Plugin, just set ajaxhistory=true in the Head Tag
+  * Fix Issues 7, 11, 12, 13, 15, 16
+  * New Reload Example in the Showcase
+  * Upgrade Form Plugin to Version 2.33
+
 = 1.5.0 =
 
   * Change Showcase to Struts2 2.1.8
