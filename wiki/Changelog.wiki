@@ -1,6 +1,15 @@
 #summary Changelog
 #labels Featured
 
+= 1.7.0 =
+
+  * Enable Ajaxhistory for Remote Links and Forms (Beta)
+  * Extend Showcase for Ajaxhistory
+  * Make plugin more XHTML Compatible
+  * Default Indicator (Issues 21)
+  * Fix Issues 23, 24
+  * Upgrade Form Plugin to Version 2.36
+
 = 1.6.0 =
 
   * A History technique for Tabs based on jQuery BBQ Plugin, just set ajaxhistory=true in the Head Tag
