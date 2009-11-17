@@ -20,16 +20,20 @@ The "head" tag renders required JavaScript code to configure jQuery and is requi
 </html>
 }}}
 
-==Head tag for AJAX calls, Effects and Widgets==
+==Head tag for AJAX calls, Effects and Widgets with Default Indicator==
 The "locale" attribute configures jQuery locale for datepicker. Default is "en" you can use all locales that are bundled with jQuery. e.g. "de, "fr", "ja", ...
+
+The default indicator is visible at every ajax request.
+
 {{{
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <html>
   <head>
-    <sj:head locale="de" jqueryui="true"/>
+    <sj:head locale="de" jqueryui="true" defaultIndicator="myDefaultIndicator"/>
   </head>
   <body>
+    <img id="myDefaultIndicator" src="images/ajax-loader.gif" alt="Loading..." style="display:none"/>
   </body>
 </html>
 }}}
@@ -92,10 +96,18 @@ Create a folder in your WebRoot path *template/themes/mytheme* and copy followin
 				<tr>
 					<td align="left" valign="top">ajaxcache</td>
 					<td align="left" valign="top">false</td>
-					<td align="left" valign="top">true</td>
+					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">Boolean</td>
 					<td align="left" valign="top">If set to false it will force the pages that you request to not be cached by the browser.</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">ajaxhistory</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">Boolean</td>
+					<td align="left" valign="top">BETA!!! If set to true it will enable history and bookmarking for AJAX content and jQuery UI Tabs.</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">compressed</td>
@@ -114,9 +126,17 @@ Create a folder in your WebRoot path *template/themes/mytheme* and copy followin
 					<td align="left" valign="top">base path for custom jQuery designs</td>
 				</tr>
 				<tr>
+					<td align="left" valign="top">defaultIndicator</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">The default indicator for all AJAX actions</td>
+				</tr>
+				<tr>
 					<td align="left" valign="top">jquerytheme</td>
 					<td align="left" valign="top">false</td>
-					<td align="left" valign="top">base</td>
+					<td align="left" valign="top">smoothness</td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
 					<td align="left" valign="top">jQuery UI theme</td>
