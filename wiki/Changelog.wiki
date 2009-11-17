@@ -1,6 +1,11 @@
 #summary Changelog
 #labels Featured
 
+= 1.7.2 =
+
+  * Fix Issue 27
+  * Fix Issue 30
+
 = 1.7.1 =
 
   * Fix critical Issue 25
