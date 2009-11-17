@@ -218,14 +218,6 @@ For custom themes for the Dialog take look at the [HeadTag Head Tag].
 					<td align="left" valign="top">jQuery options for effect, eg 'color : #aaaaaa' for the highlight effect or 'times : 3' for the bounce effect. Only valid if 'effect' attribute is set. See more details at http://docs.jquery.com/UI/Effects</td>
 				</tr>
 				<tr>
-					<td align="left" valign="top">elementIds</td>
-					<td align="left" valign="top">false</td>
-					<td align="left" valign="top"></td>
-					<td align="left" valign="top">false</td>
-					<td align="left" valign="top">String</td>
-					<td align="left" valign="top">A comma delimited list of form elements that should be individually serialized and sent with the input load request. Input element must have a 'name' attribute and will be serialized as name=value</td>
-				</tr>
-				<tr>
 					<td align="left" valign="top">errorElementId</td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">false</td>
@@ -336,6 +328,38 @@ For custom themes for the Dialog take look at the [HeadTag Head Tag].
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
 					<td align="left" valign="top">If loading content into a target, The text to be displayed during load (will be shown if any provided, will override settings for the target container)</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">maxHeight</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">The maximum height to which the dialog can be resized, in pixels.</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">maxWidth</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">The maximum width to which the dialog can be resized, in pixels.</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">minHeight</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">The minimum height to which the dialog can be resized, in pixels.</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">minWidth</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">The minimum width to which the dialog can be resized, in pixels.</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">modal</td>
@@ -719,7 +743,7 @@ For custom themes for the Dialog take look at the [HeadTag Head Tag].
 					<td align="left" valign="top"></td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
-					<td align="left" valign="top">The width of the dialog, in pixels. Default: 300</td>
+					<td align="left" valign="top">The width of the dialog, in pixels.</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">zindex</td>
