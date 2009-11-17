@@ -1,6 +1,10 @@
 #summary Changelog
 #labels Featured
 
+= 1.7.1 =
+
+  * Fix critical Issue 25
+
 = 1.7.0 =
 
   * Enable Ajaxhistory for Remote Links and Forms (Beta)
