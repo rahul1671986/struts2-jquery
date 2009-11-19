@@ -1,6 +1,14 @@
 #summary Changelog
 #labels Featured
 
+= 1.7.3 =
+
+  * Add new Topics for Dialog (onOpenTopics, onCloseTopics, onBeforCloseTopics, onFocusTopics)
+  * New Dialog with Topics Example in the Showcase
+  * Fix Issue 31
+  * Fix Issue 32
+  * Fix Issue 33
+
 = 1.7.2 =
 
   * Fix Issue 27
