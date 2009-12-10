@@ -1,6 +1,15 @@
 #summary Changelog
 #labels Featured
 
+= 1.8.0 =
+
+  * Support for [http://www.trirand.com/blog/ jQuery Grid Plugin]
+  * Support for Listen Topics
+  * Fix Issue 34
+  * Fix Issue 36
+  * Fix Issue 38
+  * Fix Issue 39
+
 = 1.7.3 =
 
   * Add new Topics for Dialog (onOpenTopics, onCloseTopics, onBeforCloseTopics, onFocusTopics)
