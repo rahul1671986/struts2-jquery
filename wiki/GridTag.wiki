@@ -9,6 +9,10 @@ For custom locals use the [HeadTag Head Tag]
 
 = Samples =
 
+  * [EditGrid Make a Grid editable]
+  * [FormatGrid Format Grid Columns]
+  * [SearchGrid Search Grid]
+
 ==Configuration==
 
 Enable JSON support in your Struts2 Webapplication.
