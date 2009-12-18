@@ -1,0 +1,124 @@
+#summary Make a Grid editable
+#labels Phase-Implementation
+
+= Simple Edit =
+
+Create an Edit Action like this
+
+{{{
+public class EditGridEntry extends ActionSupport {
+
+  private String              oper;
+  private String              id;
+  private String              name;
+  private String              country;
+  private String              city;
+  private double              creditLimit;
+
+  @Actions( {
+    @Action(value = "/edit-grid-entry", results = {
+        @Result(location = "simpleecho.jsp", name = "success"), @Result(location = "simpleecho.jsp", name = "input")
+    })
+  })
+  public String execute() throws Exception
+  {
+    Customer customer;
+    if (oper.equalsIgnoreCase("add"))
+    {
+      log.debug("Add Customer");
+      customer = new Customer();
+      customer.setName(name);
+      customer.setCountry(country);
+      customer.setCity(city);
+      customer.setCreditLimit(creditLimit);
+
+      CustomerDAO.save(customer);
+    }
+    else if (oper.equalsIgnoreCase("edit"))
+    {
+      log.debug("Edit Customer");
+
+      customer = CustomerDAO.findById(Integer.parseInt(id));
+      customer.setName(name);
+      customer.setCountry(country);
+      customer.setCity(city);
+      customer.setCreditLimit(creditLimit);
+      CustomerDAO.update(customer);
+    }
+    else if (oper.equalsIgnoreCase("del"))
+    {
+        customer = CustomerDAO.findById(Integer.parseInt(id));
+        CustomerDAO.delete(customer);
+      }
+    }
+  }
+}
+}}}
+
+Specify an Edit Url in your JSP
+{{{
+<s:url id="editurl" action="edit-grid-entry"/>
+}}}
+
+And enable Edit by setting following attributes in your JSP
+
+{{{
+ <sj:grid ... editurl="%{editurl}" ...>
+}}}
+
+then define which Column should be editable
+
+{{{
+<sj:gridColumn ...
+  editable="true" 
+  edittype="<type>" 
+  editoptions="{<options>}"
+  editrules="{<rules>}"
+... />
+}}}
+
+See [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:common_rules jqGrid Wiki]  for valid edit types,options,rules
+
+== Example for an Edit Options ==
+{{{
+<sj:gridColumn 
+name="country" 
+index="country" 
+title="Country" 
+editable="true" 
+edittype="select" 
+editoptions="{value:'France:France;USA:USA;Australia:Australia;Norway:Norway;Poland:Poland;Germany:Germany;Spain:Spain'}"/>
+}}}
+
+== Example for an Edit Rules==
+{{{
+    	<sj:gridColumn 	name="creditLimit" 
+    					index="creditLimit" 
+    					title="Credit Limit" 
+    					editable="true" 
+    					editrules="{
+    									number: true, 
+    									required: true, 
+    									minValue : 100.0, 
+    									maxValue : 10000.0
+    								}" 
+    					formatter="currency" />
+}}}
+
+= Inline Edit =
+
+For Inline Editing set sj:grid attribute editinline to true.
+
+{{{
+    <sj:grid ...
+    	editurl="%{editurl}"
+    	editinline="true"
+
+    ... >
+
+}}}
+
+
+= Cell Edit =
+
+TODO
