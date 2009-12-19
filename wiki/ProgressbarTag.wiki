@@ -15,9 +15,9 @@ Take a look at the [http://www.weinfreund.de/struts2-jquery-showcase/index.actio
 
 == Resizeable Progressbar ==
 {{{
-<sj:effectDiv id="progressbarWrapper" resizable="true" cssStyle="height:30px;" cssClass="ui-widget-default">
+<sj:div id="progressbarWrapper" resizable="true" cssStyle="height:30px;" cssClass="ui-widget-default">
   <sj:progressbar id="progressbarresize" value="21" change="change" cssStyle="height: 100%;"/>
-</sj:effectDiv>
+</sj:div>
 }}}
 
 == Progressbar with change event ==
