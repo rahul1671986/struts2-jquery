@@ -34,8 +34,6 @@ For Custom themes for the TabbedPanel take look at the [HeadTag Head Tag].
 {{{
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
 <html>
   <head>
     <sj:head jqueryui="true"/>
