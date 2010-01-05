@@ -35,7 +35,10 @@ Yes, just set the *loadFromGoogle* Attribute in the [HeadTag Head Tag] to *true*
 
 === How can I make a Contribution? ===
 
-Contributions are welcome, please start a new Issue and attach the patch file.
+Struts2 jQuery Plugin is Open Source Software, which means anyone can use it and contribute. 
+It also means community support is important to make it a really solid and long-lasting project.
+
+Any help and feedback is welcome, either on the [http://code.google.com/p/struts2-jquery/issues/list issue site], or on the [http://groups.google.com/group/struts2-jquery user group].
 
 === Exists a User Group? ===
 
