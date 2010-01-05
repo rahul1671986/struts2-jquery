@@ -1,11 +1,11 @@
 #summary some frequently asked questions.
 #labels Featured,Phase-Requirements
 
-= FAQ =
+<wiki:toc max_depth="3" />
 
 == Installation ==
 
-=== Which jQuery Version is currently used ===
+=== Which jQuery Version is currently used? ===
 
 Versions of jQuery and related Plugins in 1.8.0
 
