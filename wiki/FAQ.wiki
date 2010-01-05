@@ -7,13 +7,12 @@
 
 === Which jQuery Version is currently used? ===
 
-Versions of jQuery and related Plugins in 1.8.0
+|| Plugin Version || jQuery || jQuery UI || Form Plugin || BBQ (History) || jqGrid ||
+|| 1.8.1 || 1.3.2 || 1.7.2 || 2.36 || 1.0.3 || 3.6.2 ||
+|| 1.8.0 || 1.3.2 || 1.7.2 || 2.36 || 1.0.2 || 3.6.1 ||
+|| 1.7.0 || 1.3.2 || 1.7.2 || 2.36 || 1.0.2 ||  ||
+|| 1.6.0 || 1.3.2 || 1.7.2 || 2.33 || 1.0.2 ||  ||
 
-  * jQuery *1.3.2*
-  * jQuery UI *1.7.2*
-  * jQuery Form Plugin *2.3.6*
-  * jQuery BBQ *1.0.2*
-  * jqGrid *3.6.1*
 
 === How can I use the Plugin? ===
 
