@@ -3,7 +3,13 @@
 
 <wiki:toc max_depth="3" />
 
-== Installation ==
+== Overview ==
+
+=== Why Struts2 jQuery Plugin ===
+
+  * The Struts2 jQuery Plugin give you an easy integration of ajax and widgets.
+  * The current Dojo Plugin is deprecated.
+  * jQuery is one of the most used javascript frameworks. See [http://www.google.com/trends?q=javascript+jquery%2C+javascript+dojo%2C+javascript+prototype&ctab=0&geo=all&date=all&sort=0 Google Trends]
 
 === Which jQuery Version is currently used? ===
 
@@ -13,6 +19,8 @@
 || 1.7.0 || 1.3.2 || 1.7.2 || 2.36 || 1.0.2 ||  ||
 || 1.6.0 || 1.3.2 || 1.7.2 || 2.33 || 1.0.2 ||  ||
 
+
+== Installation ==
 
 === How can I use the Plugin? ===
 
