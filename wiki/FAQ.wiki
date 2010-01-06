@@ -1,5 +1,6 @@
 #summary Frequently Asked Questions.
 #labels Featured,Phase-Requirements
+#sidebar Sidebar
 
 <wiki:toc max_depth="3" />
 
