@@ -80,89 +80,89 @@ public class JsonSample extends ActionSupport{
 ==Receive Entrys from a simple String List==
 
 {{{
-				<s:url id="remoteurl" action="jsonsample"/> 
-				<sj:select 
-					href="%{remoteurl}" 
-					id="echo" 
-					name="echo" 
-					list="languageList"
-					emptyOption="true" 
-					headerKey="-1" 
-					headerValue="Please Select a Language"/>
+<s:url id="remoteurl" action="jsonsample"/> 
+<sj:select 
+	href="%{remoteurl}" 
+	id="echo" 
+	name="echo" 
+	list="languageList"
+	emptyOption="true" 
+	headerKey="-1" 
+	headerValue="Please Select a Language"/>
 }}}
 
 ==Receive Entrys from a Object List==
 
 {{{
-				<s:url id="remoteurl" action="jsonsample"/> 
-				<sj:select 
-					href="%{remoteurl}" 
-					id="echo3" 
-					name="echo" 
-					list="languageObjList" 
-					listKey="myKey" 
-					listValue="myValue"
-					emptyOption="true" 
-					headerKey="-1" 
-					headerValue="Please Select a Language"/>
+<s:url id="remoteurl" action="jsonsample"/> 
+<sj:select 
+	href="%{remoteurl}" 
+	id="echo3" 
+	name="echo" 
+	list="languageObjList" 
+	listKey="myKey" 
+	listValue="myValue"
+	emptyOption="true" 
+	headerKey="-1" 
+	headerValue="Please Select a Language"/>
 }}}
 
 ==Receive Entrys from a Map==
 
 {{{
-				<s:url id="remoteurl" action="jsonsample"/> 
-				<sj:select 
-					href="%{remoteurl}" 
-					id="echo2" 
-					name="echo" 
-					list="languageMap"
-					emptyOption="true" 
-					headerKey="-1" 
-					headerValue="Please Select a Language"/>
+<s:url id="remoteurl" action="jsonsample"/> 
+<sj:select 
+	href="%{remoteurl}" 
+	id="echo2" 
+	name="echo" 
+	list="languageMap"
+	emptyOption="true" 
+	headerKey="-1" 
+	headerValue="Please Select a Language"/>
 }}}
 
 ==A simple Doubleselect with Topics==
 
 {{{
-     <s:form id="formSelectReload" action="echo" theme="simple" cssClass="yform">
-        <fieldset>
-            <legend>AJAX Form</legend>
-	        <div class="type-text">
-	            <label for="language">Language: </label>
-				<s:url id="remoteurl" action="jsonsample"/> 
-				<sj:select 
-					href="%{remoteurl}" 
-					id="language" 
-					onChangeTopics="reloadsecondlist" 
-					name="language" 
-					list="languageObjList" 
-					listKey="myKey" 
-					listValue="myValue" 
-					emptyOption="true" 
-					headerKey="-1" 
-					headerValue="Please Select a Language"/>
-	        </div>
-	        <div class="type-text">
-	            <label for="echo">Framework: </label>
-				<sj:select 
-					href="%{remoteurl}" 
-					id="selectWithReloadTopic" 
-					formIds="formSelectReload" 
-					reloadTopics="reloadsecondlist" 
-					name="echo" list="reloadList" 
-					emptyOption="true" 
-					headerKey="-1" 
-					headerValue="Please Select a Framework"/>
-	        </div>
-	        <div class="type-button">
-				<sj:submit 
-					targets="result" 
-					value="AJAX Submit" 
-					indicator="indicator"/>
-				<img id="indicator" src="images/indicator.gif" alt="Loading..." style="display:none"/>
-	        </div>
-        </fieldset>
-    </s:form>
+ <s:form id="formSelectReload" action="echo" theme="simple" cssClass="yform">
+    <fieldset>
+        <legend>AJAX Form</legend>
+        <div class="type-text">
+            <label for="language">Language: </label>
+			<s:url id="remoteurl" action="jsonsample"/> 
+			<sj:select 
+				href="%{remoteurl}" 
+				id="language" 
+				onChangeTopics="reloadsecondlist" 
+				name="language" 
+				list="languageObjList" 
+				listKey="myKey" 
+				listValue="myValue" 
+				emptyOption="true" 
+				headerKey="-1" 
+				headerValue="Please Select a Language"/>
+        </div>
+        <div class="type-text">
+            <label for="echo">Framework: </label>
+			<sj:select 
+				href="%{remoteurl}" 
+				id="selectWithReloadTopic" 
+				formIds="formSelectReload" 
+				reloadTopics="reloadsecondlist" 
+				name="echo" list="reloadList" 
+				emptyOption="true" 
+				headerKey="-1" 
+				headerValue="Please Select a Framework"/>
+        </div>
+        <div class="type-button">
+			<sj:submit 
+				targets="result" 
+				value="AJAX Submit" 
+				indicator="indicator"/>
+			<img id="indicator" src="images/indicator.gif" alt="Loading..." style="display:none"/>
+        </div>
+    </fieldset>
+</s:form>
 }}}
 
 = Attributes =
