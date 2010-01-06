@@ -3,9 +3,11 @@
   * General
     * [Changelog]
     * [FAQ]
+    * [HeadTag Head & Themeing]
   * Ajax
     * [AnchorTag Anchor]
     * [DivTag Div]
+    * [SubmitTag Form Submit]
   * UI widgets
     * [TabbedPanelTag Tabbed Panel]
     * [DatePickerTag Datepicker]
@@ -13,9 +15,16 @@
     * [AccordionTag Accordion]
     * [ProgressbarTag Progressbar]
     * [SliderTag Slider]
-  * [GridTag Grid]  
-    * UI interactions
+    * [GridTag Grid]  
+  * UI interactions
     * [Resizable Resizable] for Divs
     * [DragAndDrop Drag and Drop] for Divs
     * [Selectable Selectable] for Divs
     * [Sortable Sortable] for Divs
+  * Form Elements
+    * [TextfieldTag Textfield]
+    * [TextareaTag Textarea]
+    * [SelectTag Select]
+  * Links
+    * [http://www.weinfreund.de/struts2-jquery-showcase/ Showcase/Examples]
+    * [http://groups.google.com/group/struts2-jquery Mailinglist/Forum]
