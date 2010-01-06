@@ -10,7 +10,8 @@ This tag generates an Select Box that loads its content using an ajax call, via 
 == Create JSON Action that provides the Data ==
 
 Add the struts2-json-plugin to your WEB-INF/lib folder.
-This Plugin is since 2.1.8 distributed with Struts2.
+
+This Plugin is distributed with Struts2 since 2.1.8 .
 
 {{{
 public class JsonSample extends ActionSupport{
@@ -18,6 +19,8 @@ public class JsonSample extends ActionSupport{
     private List<String> languageList;
     private List<ListValue> languageObjList;
     private Map<String, String> languageMap;
+    private List<String>        reloadList;
+    private String              language;
 
     @Actions({
     	@Action(
@@ -34,15 +37,35 @@ public class JsonSample extends ActionSupport{
          
       languageList.add("Java");
       languageList.add("PHP");
-      languageList.add("C++");
+      languageList.add("C#");
        
       languageMap.put("J", "Java");
       languageMap.put("P", "PHP");
-      languageMap.put("C", "C++");
+      languageMap.put("C", "C#");
 
       languageObjList.add(new ListValue("J", "Java"));
       languageObjList.add(new ListValue("P", "PHP"));
-      languageObjList.add(new ListValue("C", "C++"));
+      languageObjList.add(new ListValue("C", "C#"));
+
+    reloadList = new ArrayList<String>();
+    if (language != null && language.equalsIgnoreCase("J"))
+    {
+      reloadList.add("Struts2");
+      reloadList.add("MyFaces");
+      reloadList.add("Tapestry");
+    }
+    else if (language != null && language.equalsIgnoreCase("P"))
+    {
+      reloadList.add("CakePHP");
+      reloadList.add("Symfony");
+      reloadList.add("Zend");
+    }
+    else if (language != null && language.equalsIgnoreCase("C"))
+    {
+      reloadList.add("NStruts");
+      reloadList.add("ProMesh.NET");
+      reloadList.add("Websharp");
+    }
 
       return SUCCESS;
     }
@@ -98,6 +121,49 @@ public class JsonSample extends ActionSupport{
 					headerValue="Please Select a Language"/>
 }}}
 
+==A simple Doubleselect with Topics==
+
+{{{
+     <s:form id="formSelectReload" action="echo" theme="simple" cssClass="yform">
+        <fieldset>
+            <legend>AJAX Form</legend>
+	        <div class="type-text">
+	            <label for="language">Language: </label>
+				<s:url id="remoteurl" action="jsonsample"/> 
+				<sj:select 
+					href="%{remoteurl}" 
+					id="language" 
+					onChangeTopics="reloadsecondlist" 
+					name="language" 
+					list="languageObjList" 
+					listKey="myKey" 
+					listValue="myValue" 
+					emptyOption="true" 
+					headerKey="-1" 
+					headerValue="Please Select a Language"/>
+	        </div>
+	        <div class="type-text">
+	            <label for="echo">Framework: </label>
+				<sj:select 
+					href="%{remoteurl}" 
+					id="selectWithReloadTopic" 
+					formIds="formSelectReload" 
+					reloadTopics="reloadsecondlist" 
+					name="echo" list="reloadList" 
+					emptyOption="true" 
+					headerKey="-1" 
+					headerValue="Please Select a Framework"/>
+	        </div>
+	        <div class="type-button">
+				<sj:submit 
+					targets="result" 
+					value="AJAX Submit" 
+					indicator="indicator"/>
+				<img id="indicator" src="images/indicator.gif" alt="Loading..." style="display:none"/>
+	        </div>
+        </fieldset>
+    </s:form>
+}}}
 
 = Attributes =
 		<table width="100%">
