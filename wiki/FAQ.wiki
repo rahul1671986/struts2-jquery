@@ -1,4 +1,4 @@
-#summary some frequently asked questions.
+#summary Frequently Asked Questions.
 #labels Featured,Phase-Requirements
 
 <wiki:toc max_depth="3" />
@@ -31,7 +31,7 @@
 
 === Can I use my own Theme? ===
 
-Yes, see Details about Theming in the [HeadTag Head Tag Wiki]
+Yes, see Details about Theming in the [HeadTag Head Tag Wiki].
 
 == Performance ==
 
