@@ -4,7 +4,7 @@
 = 1.8.1 =
 
   * Upgrade jqGrid to 3.6.2
-  * Add attribute editrules for [GridTag Grid Tag]
+  * Add attribute editrules for [GridColumnTag GridColumn Tag]
   * Upgrade jQuery BBQ to 1.0.3
   * Fix Issue 43: Datepicker localized format
   * Fix Issue 44: Grid with parent columns
