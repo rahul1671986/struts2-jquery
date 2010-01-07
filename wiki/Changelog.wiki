@@ -1,7 +1,7 @@
 #summary Changelog
 #labels Featured
 
-= 1.8.0 =
+= 1.8.1 =
 
   * Upgrade jqGrid to 3.6.2
   * Add attribute editrules for [GridTag Grid Tag]
