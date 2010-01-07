@@ -1,4 +1,4 @@
-#summary A tag that renders a single [GridTag Grid] Column.
+#summary A tag that renders a single Grid Column.
 #labels Phase-Implementation
 
 = Attributes =
@@ -82,6 +82,14 @@
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
 					<td align="left" valign="top">Array of allowed options (attributes) for edittype option</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">editrules</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">sets additional rules for the editable field. e.g {number:true, required: true, minValue:10, maxValue:100}</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">edittype</td>
