@@ -9,7 +9,7 @@
 === Why Struts2 jQuery Plugin ===
 
   * The Struts2 jQuery Plugin give you an easy integration of ajax and widgets.
-  * The current Dojo Plugin is deprecated.
+  * The current Struts2 Dojo Plugin is deprecated.
   * jQuery is one of the most used javascript frameworks. See [http://www.google.com/trends?q=javascript+jquery%2C+javascript+dojo%2C+javascript+prototype&ctab=0&geo=all&date=all&sort=0 Google Trends]
 
 === Which jQuery Version is currently used? ===
@@ -52,3 +52,5 @@ Any help and feedback is welcome, either on the [http://code.google.com/p/struts
 === Exists a User Group? ===
 
 For Questions around the Plugin you can use this [http://groups.google.com/group/struts2-jquery User Group]
+
+<wiki:gadget url="http://markmail.org/gadgets/markmailmini.xqy?l=com.googlegroups.struts2-jquery" width="500" height="300"/>
