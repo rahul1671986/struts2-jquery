@@ -61,7 +61,7 @@ public class JsonTable extends ActionSupport {
   private Integer             total            = 0;
 
   // All Record
-  private Integer             record           = 0;
+  private Integer             records          = 0;
 
   @Actions( {
     @Action(value = "/jsontable", results = {
@@ -76,13 +76,13 @@ public class JsonTable extends ActionSupport {
 
 
     //Count Rows (select count(*) from custumer)
-    record = CustumerDAO.count()
+    records = CustumerDAO.count()
 
     //Your logic to search and select the required data.
     gridModel = CustumerDAO.find(from, to); 
 
     //calculate the total pages for the query 
-    total =(int) Math.ceil((double)record / (double)rows);
+    total =(int) Math.ceil((double)records / (double)rows);
 
     return SUCCESS;
   }
