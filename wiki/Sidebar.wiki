@@ -1,6 +1,7 @@
 #summary Sidebar
 
   * General
+    * [News]
     * [Changelog]
     * [FAQ]
     * [HeadTag Head & Themeing]
