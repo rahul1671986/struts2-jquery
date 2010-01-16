@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<metadata>
+<?xml version="1.0" encoding="UTF-8"?><metadata>
   <groupId>com.jgeppert.struts2.jquery</groupId>
   <artifactId>struts2-jquery-plugin</artifactId>
   <version>1.8.2-SNAPSHOT</version>
@@ -7,6 +6,6 @@
     <versions>
       <version>1.8.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20100116144800</lastUpdated>
+    <lastUpdated>20100116222848</lastUpdated>
   </versioning>
 </metadata>
