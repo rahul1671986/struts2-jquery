@@ -30,6 +30,54 @@
   # Add the Tag-Lib to your JSP `<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>`
   # Place the [HeadTag Head Tag] inside your html head tags
 
+=== How can I use the Plugin from Maven? ===
+
+Currently the plugin is not found in the central Maven repository, since the request for addition is still pending. Meanwhile you can add the project's staging or snapshot repository to your project's pom.xml:
+{{{
+...
+<repositories>
+    ...
+    <repository>
+        <id>struts2-jquery.staging</id>
+        <name>Struts 2 jQuery Plugin Staging Repository</name>
+        <url>http://struts2-jquery.googlecode.com/svn/maven/staging</url>
+    </repository>
+</repositories>
+...
+<dependencies>
+    ...
+    <dependency>
+        <groupId>com.jgeppert.struts2.jquery</groupId>
+        <artifactId>struts2-jquery-plugin</artifactId>
+        <version>1.8.1</version>
+    </dependency>
+    ...
+</dependencies>
+}}}
+If you want to be able to reference snapshot builds, you would extend the setup as follows:
+{{{
+...
+<repositories>
+    ...
+    <repository>
+        <id>struts2-jquery.staging</id>
+        <name>Struts 2 jQuery Plugin Staging Repository</name>
+        <url>http://struts2-jquery.googlecode.com/svn/maven/staging</url>
+        <releases>true</releases>
+        <snapshots>false</snapshots>
+    </repository>
+    <repository>
+        <id>struts2-jquery.snapshots</id>
+        <name>Struts 2 jQuery Plugin Snapshots and Test Builds Repository</name>
+        <url>http://struts2-jquery.googlecode.com/svn/maven/snapshots</url>
+        <releases>false</releases>
+        <snapshots>true</snapshots>
+    </repository>
+</repositories>
+...
+}}}
+
+
 === Can I use my own Theme? ===
 
 Yes, see Details about Theming in the [HeadTag Head Tag Wiki].
