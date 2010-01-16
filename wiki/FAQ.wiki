@@ -97,8 +97,33 @@ It also means community support is important to make it a really solid and long-
 
 Any help and feedback is welcome, either on the [http://code.google.com/p/struts2-jquery/issues/list issue site], or on the [http://groups.google.com/group/struts2-jquery user group].
 
-=== Exists a User Group? ===
+=== Does a User Group exist? ===
 
 For Questions around the Plugin you can use this [http://groups.google.com/group/struts2-jquery User Group]
 
 <wiki:gadget url="http://markmail.org/gadgets/markmailmini.xqy?l=com.googlegroups.struts2-jquery" width="500" height="300"/>
+
+=== How can a project committer trigger a Maven repository deployment? ===
+
+To be able to deploy a current snapshot or release build to the SVN based Maven repository, you will need to add the following lines to your local Maven settings, usually found in $HOME/.m2/settings.xml:
+{{{
+...
+    <servers>
+        <server>
+            <id>struts2-jquery.staging</id>
+            <username>[YOUR GOOGLECODE LOGINNAME]</username>
+            <password>[YOUR GOOGLECODE SVN PASSWORD]</password>
+        </server>
+        <server>
+            <id>struts2-jquery.snapshots</id>
+            <username>[YOUR GOOGLECODE LOGINNAME]</username>
+            <password>[YOUR GOOGLECODE SVN PASSWORD]</password>
+        </server>
+    </servers>
+...
+}}}
+This is a one-time setup. Afterwards you will be able to make Maven deployments simply by the following commandline:
+{{{
+mvn deploy
+}}}
+* Please note that this will not work unless you have commit rights to the struts2-jquery project on Google Code *
