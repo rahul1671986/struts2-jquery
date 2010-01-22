@@ -91,7 +91,11 @@ For custom themes for the Dialog take look at the [HeadTag Head Tag].
   <body>
     <sj:dialog 
     	id="mybuttondialog" 
-    	buttons="{ 'OK':function() {okButton();},'Cancel':function() {cancelButton();} }" 
+    	buttons="{ 
+    		'OK':function() { okButton(); },
+    		'Cancel':function() { cancelButton(); } 
+    		}" 
+    	autoOpen="false" 
     	modal="true" 
     	title="Dialog with Buttons"
     >
