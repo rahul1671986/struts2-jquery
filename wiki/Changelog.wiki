@@ -1,6 +1,20 @@
 #summary Changelog
 #labels Featured
 
+= 1.8.2 =
+
+  * Enable Subgrid Feature for [GridTag Grid Tag]
+  * Upgrade jQuery BBQ to 1.1
+  * New Velocity Example in Showcase
+  * Fix Issue 45: AJAX form submission with href parameters
+  * Fix Issue 50: gridModel parameter is compulsory, but not used
+  * Fix Issue 51: url parameters escaped
+  * Fix Issue 53: Meaningless viewrecords information
+  * Fix Issue 58: New Attribute *formoptions* for [GridCollumnTag GridCollumn Tag]
+  * Fix Issue 59: tabbedpanel spinner cannot be disabled using empty string value
+  * Fix Issue 60: Distorted Divs in Local Tabs
+  * Fix Issue 63: [Ajax Submit is not working in Velocity]
+
 = 1.8.1 =
 
   * Upgrade jqGrid to 3.6.2
