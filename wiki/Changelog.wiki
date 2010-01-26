@@ -4,7 +4,7 @@
 = 1.8.2 =
 
   * Enable Subgrid Feature for [GridTag Grid Tag]
-  * New Grid Showcase together with [http://code.google.com/p/full-hibernate-plugin-for-struts2/ Full Hibernate Plugin for Struts2]
+  * New [http://www.weinfreund.de/struts2-jquery-grid-showcase/ Grid Showcase] together with [http://code.google.com/p/full-hibernate-plugin-for-struts2/ Full Hibernate Plugin for Struts2]
   * Upgrade jQuery BBQ to 1.1
   * New Velocity Example in Showcase
   * Fix Issue 45: AJAX form submission with href parameters
