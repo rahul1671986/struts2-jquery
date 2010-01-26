@@ -72,7 +72,7 @@
 			}
 		},
 		
-		action: function($elem, options, loadHandler, type){
+		opendialog: function($elem, options){
 
 			if(options.opendialog) {
 				$elem.bind('click', function(event) {
@@ -80,6 +80,8 @@
 	    		    return false;
 				});
 			}
+		},
+		action: function($elem, options, loadHandler, type){
 			
 	    	//bind event to onClick topics
 			if(options.onclicktopics) {  
@@ -380,6 +382,8 @@
 			
 			var loadHandler = '_s2j_container_load';
 
+			this.opendialog($elem, options);
+			
 			if(options.formids) {
 		    	var formTopic = '_s2j_form_topic_' + options.id;
 				this.formsubmit($elem, options, formTopic);
@@ -423,6 +427,8 @@
 
 		button: function($elem, options){
 	    	var formTopic = '_s2j_form_topic_' + options.id;
+			
+			this.opendialog($elem, options);
 			
 			if(options.formids != undefined) {
 				this.formsubmit($elem, options, formTopic);
