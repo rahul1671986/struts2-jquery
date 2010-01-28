@@ -58,10 +58,10 @@
 	options_${parameters.id?html}.effect = "${parameters.effect?html}";
   </#if>  
   <#if parameters.effectDuration?exists>
-	options_${parameters.id?html}.effectduration = "${parameters.effectDuration?html}";
+	options_${parameters.id?html}.effectduration = ${parameters.effectDuration?html};
   </#if>  
   <#if parameters.effectOptions?exists>
-	options_${parameters.id?html}.effectoptions = "${parameters.effectOptions?html}";
+	options_${parameters.id?html}.effectoptions = ${parameters.effectOptions?html};
   </#if>  
   <#if parameters.timeout?exists>
 	options_${parameters.id?html}.timeout = ${parameters.timeout?html};

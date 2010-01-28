@@ -476,7 +476,8 @@
 				var targets = options.targets.split(',');
 				for ( var i = 0; i < targets.length; i++) {
 					var target = targets[i];
-	    			$('#' + target).subscribe(topic, '_s2j_effects', options);
+					
+					if(options.effect) { $('#' + target).subscribe(topic, '_s2j_effects', options); }
 	    	    	if(ajaxhistory) {
 						var params = {};
 						params.target = target;
@@ -1275,20 +1276,12 @@
     $.subscribeHandler('_s2j_effects', function(event, data) {
 		var options = {};
 		$.extend(options,event.data);
-		if(options.targets || options.effect) {
+		if(options.targets && options.effect) {
 			var eo = {};
 			var duration = 2000;
-			if(options.effectoptions) {
-		        var eos = options.effectoptions;
-		        eo = window[eos];
-		        if (!eo) {
-		        	eo = eval ("( " + eos + " )" );
-		        }
-			}
-			if(options.effectduration) {
-				duration = parseInt(options.effectduration);
-			}
-	        $("#"+options.targets).effect(options.effect,eo,duration);
+			if(options.effectoptions) { eo = options.effectoptions;	}
+			if(options.effectduration) { duration = options.effectduration; }
+	        $("#"+options.targets).effect(options.effect,eo,duration, null);
 		}
     });
 	
