@@ -20,6 +20,14 @@
 					<td align="left" valign="top">Set the html accesskey attribute on rendered html element</td>
 				</tr>
 				<tr>
+					<td align="left" valign="top">align</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">Defines the alignment of the cell in the Body layer, not in header cell. Possible values: left, center, right., Default 'left'}</td>
+				</tr>
+				<tr>
 					<td align="left" valign="top">cssClass</td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top"></td>
@@ -162,6 +170,14 @@
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
 					<td align="left" valign="top">The predefined types (string) or custom function name that controls the format of this field. e.g.: integer, currency, date, checkbox</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">formoptions</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">Defines various options for form editing. e.g. { label:'My Label', elmprefix:'(*)', rowpos:1, colpos:2 }</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">hidden</td>
@@ -513,7 +529,7 @@
 					<td align="left" valign="top"></td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
-					<td align="left" valign="top">Defines the search options used searching. e.g. {sopt:['eq','ne','lt','le','gt','ge','bw','bn','in','ni','ew','en','cn','nc'], defaultValue:'John Doe'}</td>
+					<td align="left" valign="top">Defines the search options used searching. e.g. {sopt:['eq','ne','lt','le','gt','ge','bw','bn','in','ni','ew','en','cn','nc']}</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">sortable</td>
