@@ -900,6 +900,22 @@ public class JsonTable extends ActionSupport {
 					<td align="left" valign="top">The initial sorting order.This parameter is added to the url - see prnNames. Two possible values - asc or desc. Default asc</td>
 				</tr>
 				<tr>
+					<td align="left" valign="top">subGridUrl</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">This option has effect only if subGrid option is set to true. This option points to the file from which we get the data for the subgrid. jqGrid adds the id of the row to this url as parameter.</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">subGridWidth</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">Determines the width of the subGrid column if subgrid is enabled.</td>
+				</tr>
+				<tr>
 					<td align="left" valign="top">tabindex</td>
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top"></td>
@@ -986,6 +1002,14 @@ public class JsonTable extends ActionSupport {
 					<td align="left" valign="top">false</td>
 					<td align="left" valign="top">String</td>
 					<td align="left" valign="top">Icon path used for image that will have the tooltip</td>
+				</tr>
+				<tr>
+					<td align="left" valign="top">userDataOnFooter</td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top"></td>
+					<td align="left" valign="top">false</td>
+					<td align="left" valign="top">String</td>
+					<td align="left" valign="top">When set to true we directly place the user data array userData at footer. The rules are as follow: If the userData array contain name which is equal to those of colModel then the value is placed in that column.If there are no such values nothing is palced. Note that if this option is used we use the current formatter options (if available) for that column.</td>
 				</tr>
 				<tr>
 					<td align="left" valign="top">validate</td>
