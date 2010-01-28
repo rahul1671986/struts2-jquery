@@ -1,5 +1,5 @@
 /*!
- * jQuery UI 1.8b1
+ * jQuery UI 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -13,7 +13,7 @@ var isFF2 = $.browser.mozilla && (parseFloat($.browser.version) < 1.9);
 
 //Helper functions and ui object
 $.ui = {
-	version: "1.8b1",
+	version: "1.8rc1",
 
 	// $.ui.plugin is deprecated.  Use the proxy pattern instead.
 	plugin: {
@@ -100,37 +100,6 @@ $.ui = {
 		UP: 38
 	}
 };
-
-// WAI-ARIA normalization
-if (isFF2) {
-	var attr = $.attr,
-		removeAttr = $.fn.removeAttr,
-		ariaNS = "http://www.w3.org/2005/07/aaa",
-		ariaState = /^aria-/,
-		ariaRole = /^wairole:/;
-
-	$.attr = function(elem, name, value) {
-		var set = value !== undefined;
-
-		return (name == 'role'
-			? (set
-				? attr.call(this, elem, name, "wairole:" + value)
-				: (attr.apply(this, arguments) || "").replace(ariaRole, ""))
-			: (ariaState.test(name)
-				? (set
-					? elem.setAttributeNS(ariaNS,
-						name.replace(ariaState, "aaa:"), value)
-					: attr.call(this, elem, name.replace(ariaState, "aaa:")))
-				: attr.apply(this, arguments)));
-	};
-
-	$.fn.removeAttr = function(name) {
-		return (ariaState.test(name)
-			? this.each(function() {
-				this.removeAttributeNS(ariaNS, name.replace(ariaState, ""));
-			}) : removeAttr.call(this, name));
-	};
-}
 
 //jQuery plugins
 $.fn.extend({
@@ -225,7 +194,7 @@ $.extend($.expr[':'], {
 
 })(jQuery);
 /*!
- * jQuery UI Widget 1.8b1
+ * jQuery UI Widget 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -457,7 +426,7 @@ $.Widget.prototype = {
 
 })( jQuery );
 /*!
- * jQuery UI Mouse 1.8b1
+ * jQuery UI Mouse 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -608,7 +577,7 @@ $.widget("ui.mouse", {
 
 })(jQuery);
 /*
- * jQuery UI Draggable 1.8b1
+ * jQuery UI Draggable 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -1056,7 +1025,7 @@ $.widget("ui.draggable", $.ui.mouse, {
 });
 
 $.extend($.ui.draggable, {
-	version: "1.8b1",
+	version: "1.8rc1",
 	eventPrefix: "drag"
 });
 
@@ -1393,7 +1362,7 @@ $.ui.plugin.add("draggable", "zIndex", {
 
 })(jQuery);
 /*
- * jQuery UI Droppable 1.8b1
+ * jQuery UI Droppable 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -1541,7 +1510,7 @@ $.widget("ui.droppable", {
 });
 
 $.extend($.ui.droppable, {
-	version: "1.8b1",
+	version: "1.8rc1",
 	eventPrefix: 'drop'
 });
 
@@ -1622,7 +1591,7 @@ $.ui.ddmanager = {
 
 			if(!this.options) return;
 			if (!this.options.disabled && this.visible && $.ui.intersect(draggable, this, this.options.tolerance))
-				dropped = this._drop.call(this, event);
+				dropped = dropped || this._drop.call(this, event);
 
 			if (!this.options.disabled && this.visible && this.accept.call(this.element[0],(draggable.currentItem || draggable.element))) {
 				this.isout = 1; this.isover = 0;
@@ -1679,7 +1648,7 @@ $.ui.ddmanager = {
 
 })(jQuery);
 /*
- * jQuery UI Resizable 1.8b1
+ * jQuery UI Resizable 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -2198,7 +2167,7 @@ $.widget("ui.resizable", $.ui.mouse, {
 });
 
 $.extend($.ui.resizable, {
-	version: "1.8b1",
+	version: "1.8rc1",
 	eventPrefix: "resize"
 });
 
@@ -2478,7 +2447,7 @@ var isNumber = function(value) {
 
 })(jQuery);
 /*
- * jQuery UI Selectable 1.8b1
+ * jQuery UI Selectable 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -2541,6 +2510,9 @@ $.widget("ui.selectable", $.ui.mouse, {
 	},
 
 	destroy: function() {
+		this.selectees
+			.removeClass("ui-selectee")
+			.removeData("selectable-item");
 		this.element
 			.removeClass("ui-selectable ui-selectable-disabled")
 			.removeData("selectable")
@@ -2731,12 +2703,12 @@ $.widget("ui.selectable", $.ui.mouse, {
 });
 
 $.extend($.ui.selectable, {
-	version: "1.8b1"
+	version: "1.8rc1"
 });
 
 })(jQuery);
 /*
- * jQuery UI Sortable 1.8b1
+ * jQuery UI Sortable 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -3782,13 +3754,13 @@ $.widget("ui.sortable", $.ui.mouse, {
 });
 
 $.extend($.ui.sortable, {
-	version: "1.8b1",
+	version: "1.8rc1",
 	eventPrefix: "sort"
 });
 
 })(jQuery);
 /*
- * jQuery UI Effects 1.8b1
+ * jQuery UI Effects 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -4090,7 +4062,7 @@ $.fn.extend({
 /******************************************************************************/
 
 $.extend($.effects, {
-	version: "1.8b1",
+	version: "1.8rc1",
 
 	// Saves a set of properties in a data storage
 	save: function(element, set) {
@@ -4497,7 +4469,7 @@ $.extend($.easing,
 
 })(jQuery);
 /*
- * jQuery UI Accordion 1.8b1
+ * jQuery UI Accordion 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -4936,7 +4908,7 @@ $.widget("ui.accordion", {
 
 
 $.extend($.ui.accordion, {
-	version: "1.8b1",
+	version: "1.8rc1",
 	animations: {
 		slide: function(options, additions) {
 			options = $.extend({
@@ -5008,7 +4980,7 @@ $.extend($.ui.accordion, {
 
 })(jQuery);
 /*
- * jQuery UI Autocomplete 1.8b1
+ * jQuery UI Autocomplete 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -5030,7 +5002,7 @@ $.widget( "ui.autocomplete", {
 	_create: function() {
 		var self = this;
 		this.element
-			.addClass( "ui-autocomplete ui-widget ui-widget-content ui-corner-all" )
+			.addClass( "ui-autocomplete" )
 			.attr( "autocomplete", "off" )
 			// TODO verify these actually work as intended
 			.attr({
@@ -5458,7 +5430,7 @@ $.widget("ui.menu", {
 });
 
 })(jQuery);/*
- * jQuery UI Button 1.8b1
+ * jQuery UI Button 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -5493,7 +5465,8 @@ $.widget( "ui.button", {
 		var self = this,
 			options = this.options,
 			toggleButton = this.type === "checkbox" || this.type === "radio",
-			hoverClass = "ui-state-hover" + ( !toggleButton ? " ui-state-active" : "" );
+			hoverClass = "ui-state-hover" + ( !toggleButton ? " ui-state-active" : "" ),
+			focusClass = "ui-state-focus";
 
 		if ( options.label === null ) {
 			options.label = this.buttonElement.html();
@@ -5516,6 +5489,13 @@ $.widget( "ui.button", {
 					return;
 				}
 				$( this ).removeClass( hoverClass );
+			})
+			.bind( "focus.button", function() {
+				// no need to check disabled, focus won't be triggered anyway
+				$( this ).addClass( focusClass );
+			})
+			.bind( "blur.button", function() {
+				$( this ).removeClass( focusClass );
 			});
 
 		if ( this.type === "checkbox") {
@@ -5579,7 +5559,23 @@ $.widget( "ui.button", {
 						return;
 					}
 					$( this ).removeClass( "ui-state-active" );
+				})
+				.bind( "keydown.button", function(event) {
+					if ( event.keyCode == $.ui.keyCode.SPACE || event.keyCode == $.ui.keyCode.ENTER ) {
+						$( this ).addClass( "ui-state-active" );
+					}
+				})
+				.bind( "keyup.button", function() {
+					$( this ).removeClass( "ui-state-active" );
 				});
+			if (this.buttonElement.is("a")) {
+				this.buttonElement.keyup(function(event) {
+					if (event.keyCode == $.ui.keyCode.SPACE) {
+						// TODO pass through original event correctly (just as 2nd argument doesn't work)
+						$(this).trigger("click");
+					}
+				})
+			}
 		}
 
 		this._resetButton();
@@ -5713,7 +5709,7 @@ $.widget( "ui.buttonset", {
 
 })( jQuery );
 /*
- * jQuery UI Datepicker 1.8b1
+ * jQuery UI Datepicker 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -5728,7 +5724,7 @@ $.widget( "ui.buttonset", {
 
 (function($) { // hide the namespace
 
-$.extend($.ui, { datepicker: { version: "1.8b1" } });
+$.extend($.ui, { datepicker: { version: "1.8rc1" } });
 
 var PROP_NAME = 'datepicker';
 var dpuuid = new Date().getTime();
@@ -6358,10 +6354,10 @@ $.extend(Datepicker.prototype, {
 			if ($.effects && $.effects[showAnim])
 				inst.dpDiv.show(showAnim, $.datepicker._get(inst, 'showOptions'), duration, postProcess);
 			else
-				inst.dpDiv[showAnim || 'show']((showAnim ? duration : ''), postProcess);
+				inst.dpDiv[showAnim || 'show']((showAnim ? duration : null), postProcess);
 			if (!showAnim)
 				postProcess();
-			if (inst.input[0].type != 'hidden')
+			if (inst.input.is(':visible') && !inst.input.is(':disabled'))
 				inst.input[0].focus();
 			$.datepicker._curInst = inst;
 		}
@@ -6405,7 +6401,8 @@ $.extend(Datepicker.prototype, {
 			'Class']('ui-datepicker-multi');
 		inst.dpDiv[(this._get(inst, 'isRTL') ? 'add' : 'remove') +
 			'Class']('ui-datepicker-rtl');
-		if (inst.input && inst.input[0].type != 'hidden' && inst == $.datepicker._curInst)
+		if (inst == $.datepicker._curInst && inst.input &&
+				inst.input.is(':visible') && !inst.input.is(':disabled'))
 			$(inst.input[0]).focus();
 	},
 
@@ -6444,8 +6441,10 @@ $.extend(Datepicker.prototype, {
 
 	/* Find an object's position on the screen. */
 	_findPos: function(obj) {
+		var inst = this._getInst(obj);
+		var isRTL = this._get(inst, 'isRTL');
         while (obj && (obj.type == 'hidden' || obj.nodeType != 1)) {
-            obj = obj.nextSibling;
+            obj = obj[isRTL ? 'previousSibling' : 'nextSibling'];
         }
         var position = $(obj).offset();
 	    return [position.left, position.top];
@@ -6468,7 +6467,7 @@ $.extend(Datepicker.prototype, {
 				inst.dpDiv.hide(showAnim, $.datepicker._get(inst, 'showOptions'), duration, postProcess);
 			else
 				inst.dpDiv[(showAnim == 'slideDown' ? 'slideUp' :
-					(showAnim == 'fadeIn' ? 'fadeOut' : 'hide'))]((showAnim ? duration : ''), postProcess);
+					(showAnim == 'fadeIn' ? 'fadeOut' : 'hide'))]((showAnim ? duration : null), postProcess);
 			if (!showAnim)
 				postProcess();
 			var onClose = this._get(inst, 'onClose');
@@ -7426,7 +7425,7 @@ $.fn.datepicker = function(options){
 $.datepicker = new Datepicker(); // singleton instance
 $.datepicker.initialized = false;
 $.datepicker.uuid = new Date().getTime();
-$.datepicker.version = "1.8b1";
+$.datepicker.version = "1.8rc1";
 
 // Workaround for #4055
 // Add another global to avoid noConflict issues with inline event handlers
@@ -7434,7 +7433,7 @@ window['DP_jQuery_' + dpuuid] = $;
 
 })(jQuery);
 /*
- * jQuery UI Dialog 1.8b1
+ * jQuery UI Dialog 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -7571,6 +7570,13 @@ $.widget("ui.dialog", {
 				.attr('id', titleId)
 				.html(title)
 				.prependTo(uiDialogTitlebar);
+
+		//handling of deprecated beforeclose (vs beforeClose) option
+		//Ticket #4669 http://dev.jqueryui.com/ticket/4669
+		//TODO: remove in 1.9pre
+		if ($.isFunction(options.beforeclose) && !$.isFunction(options.beforeClose)) {
+			options.beforeClose = options.beforeclose;
+		}
 
 		uiDialogTitlebar.find("*").add(uiDialogTitlebar).disableSelection();
 
@@ -7780,6 +7786,9 @@ $.widget("ui.dialog", {
 		handles = (handles === undefined ? this.options.resizable : handles);
 		var self = this,
 			options = self.options,
+			// .ui-resizable has position: relative defined in the stylesheet
+			// but dialogs have to use absolute or fixed positioning
+			position = self.uiDialog.css('position'),
 			resizeHandles = typeof handles == 'string'
 				? handles
 				: 'n,e,s,w,se,sw,ne,nw';
@@ -7808,6 +7817,7 @@ $.widget("ui.dialog", {
 				$.ui.dialog.overlay.resize();
 			}
 		})
+		.css('position', position)
 		.find('.ui-resizable-se').addClass('ui-icon ui-icon-grip-diagonal-se');
 	},
 
@@ -7886,6 +7896,12 @@ $.widget("ui.dialog", {
 			resize = false;
 		
 		switch (key) {
+			//handling of deprecated beforeclose (vs beforeClose) option
+			//Ticket #4669 http://dev.jqueryui.com/ticket/4669
+			//TODO: remove in 1.9pre
+			case "beforeclose":
+				key = "beforeClose";
+				break;
 			case "buttons":
 				self._createButtons(value);
 				break;
@@ -7990,7 +8006,7 @@ $.widget("ui.dialog", {
 });
 
 $.extend($.ui.dialog, {
-	version: "1.8b1",
+	version: "1.8rc1",
 
 	uuid: 0,
 	maxZ: 0,
@@ -8141,7 +8157,7 @@ $.extend($.ui.dialog.overlay.prototype, {
 
 })(jQuery);
 /*
- * jQuery UI Position 1.8b1
+ * jQuery UI Position 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -8358,7 +8374,7 @@ if (!$.offset.setOffset) {
 
 })(jQuery);
 /*
- * jQuery UI Progressbar 1.8b1
+ * jQuery UI Progressbar 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -8472,12 +8488,12 @@ $.widget("ui.progressbar", {
 });
 
 $.extend($.ui.progressbar, {
-	version: "1.8b1"
+	version: "1.8rc1"
 });
 
 })(jQuery);
 /*
- * jQuery UI Slider 1.8b1
+ * jQuery UI Slider 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -9085,13 +9101,13 @@ $.widget("ui.slider", $.ui.mouse, {
 });
 
 $.extend($.ui.slider, {
-	version: "1.8b1",
+	version: "1.8rc1",
 	eventPrefix: "slide"
 });
 
 })(jQuery);
 /*
- * jQuery UI Tabs 1.8b1
+ * jQuery UI Tabs 1.8rc1
  *
  * Copyright (c) 2010 AUTHORS.txt (http://jqueryui.com/about)
  * Dual licensed under the MIT (MIT-LICENSE.txt)
@@ -9736,7 +9752,7 @@ $.widget("ui.tabs", {
 });
 
 $.extend($.ui.tabs, {
-	version: '1.8b1'
+	version: '1.8rc1'
 });
 
 /*

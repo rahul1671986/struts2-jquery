@@ -1,5 +1,5 @@
 /*
- * jquery.struts2.min.js
+ * jquery.struts2.js
  *
  * Integration of jquery and jquery ui with struts 2 
  * for ajax, widget and interactions support in struts 2
@@ -510,16 +510,10 @@
 			if(options.maxwidth) { params.maxWidth = options.maxwidth; }
 			if(options.minheight) { params.minHeight = options.minheight; }
 			if(options.minwidth) { params.minWidth = options.minwidth; }
+			if(options.buttons) { params.buttons = options.buttons; }
 			
 			params.title = options.title;
 			
-			if(options.buttons) {
-		        var buttonsStr = options.buttons;
-		        var buttons = window[buttonsStr];
-		        if (!buttons) {
-		        	params.buttons = eval ("( " + buttonsStr + " )" );
-		        }
-			}
 			
 			params.open = function(event, ui) {
 				var data = {};
@@ -1082,7 +1076,9 @@
 				$elem.jqGrid('navGrid','#'+options.navigator,navparams,options.navigatoreditoptions, options.navigatoraddoptions, options.navigatordeleteoptions, options.navigatorsearchoptions, options.navigatorviewoptions);
 			}
 			if(options.filter) {
-				$elem.jqGrid('filterToolbar',{});
+				var fpara = {};
+				if(options.filteroptions) fpara = options.filteroptions;
+				$elem.jqGrid('filterToolbar', fpara);
 			}
 		}
 	};		
