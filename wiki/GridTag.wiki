@@ -12,6 +12,7 @@ For custom locals use the [HeadTag Head Tag]
   * [EditGrid Make a Grid editable]
   * [FormatGrid Format Grid Columns]
   * [SearchGrid Search Grid]
+  * [SubGrid Grid with Subgrid]
 
 ==Configuration==
 
