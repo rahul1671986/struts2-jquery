@@ -1314,9 +1314,10 @@
 	/** Publish Success topics */	
 	function pubSuc(cid, always, stopics, indi, modus, options) {
 		var container = $(cid);
-			return function (data, textStatus) {
+			return function (data, textStatus, request) {
 			var orginal = {};
 			orginal.status = textStatus;
+			orginal.request = request;
 			
 			if(indi) { $('#' + indi).hide(); }
 			if(modus == 'html')

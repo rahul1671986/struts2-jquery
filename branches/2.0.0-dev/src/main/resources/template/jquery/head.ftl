@@ -97,6 +97,7 @@ $(document).ready(function () {
 	<#if parameters.defaultIndicator?if_exists != "">
 	$.struts2_jquery.defaultIndicator="${parameters.defaultIndicator?string}";
 	</#if>
+	$.ajaxSettings.traditional = true;
 
 	$.ajaxSetup ({
 	<#if parameters.ajaxcache?default(false)>
